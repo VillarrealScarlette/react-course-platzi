@@ -1,0 +1,33 @@
+@import "../../containers/Vars.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+  border-radius: 0px 0px 40px 40px;
+}
+
+.main__title {
+  color: #8f8a8e;
+  font-size: 25px;
+}
+
+.input {
+  background-color: #ffffff1a;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  color: #ffffff;
+  font-family: $theme-font;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 20px;
+  width: 70%;
+}
+
+::placeholder {
+  color: #ffffff;
+}
