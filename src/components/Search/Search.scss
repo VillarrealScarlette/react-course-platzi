@@ -1,4 +1,4 @@
-@import "../../containers/Vars.scss";
+@import "../../screens/Home/Vars.scss";
 
 .main {
   display: flex;
@@ -10,15 +10,15 @@
 }
 
 .main__title {
-  color: #8f8a8e;
+  color: #E9EEF1;
   font-size: 25px;
 }
 
 .input {
   background-color: #ffffff1a;
-  border: 2px solid #ffffff;
+  border: 2px solid #E9EEF1;
   border-radius: 25px;
-  color: #ffffff;
+  color: #E9EEF1;
   font-family: $theme-font;
   font-size: 16px;
   height: 50px;
@@ -29,5 +29,5 @@
 }
 
 ::placeholder {
-  color: #ffffff;
+  color: #E9EEF1;
 }
