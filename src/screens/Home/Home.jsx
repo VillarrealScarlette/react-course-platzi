@@ -6,10 +6,6 @@ import Search from "../../components/Search/Search";
 import Categories from "../../components/Categories/Categories";
 import CarouselItem from "../../components/Carousel/CarouselItem";
 import Carousel from "../../components/Carousel/Carousel";
-//Import hooks
-import useInitialState from "../../hooks/useInitialState";
-//API
-const API = "http://localhost:3000/initialState";
 
 const Home = ({ myList, trends, originals }) => {
   const data = {
@@ -31,12 +27,18 @@ const Home = ({ myList, trends, originals }) => {
                   ? "Tendencias"
                   : category == "originals"
                   ? "Originales de Platzi Video"
-                  : title
+                  : category == "myList"
+                  ? "Mi Lista"
+                  : null
               }
             >
               <Carousel>
                 {data[category].map((item) => (
-                  <CarouselItem key={item.id} {...item} />
+                  <CarouselItem
+                    key={item.id}
+                    {...item}
+                    isList={category == "myList" ? true : false}
+                  />
                 ))}
               </Carousel>
             </Categories>
@@ -48,7 +50,7 @@ const Home = ({ myList, trends, originals }) => {
 
 const mapStateToProps = (state) => {
   return {
-    myList: state.mylist,
+    myList: state.myList,
     trends: state.trends,
     originals: state.originals,
   };
