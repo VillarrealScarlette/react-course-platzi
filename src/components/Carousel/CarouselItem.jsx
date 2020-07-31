@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { setFavorite, removeFavorite } from "../../actions";
+import { Link } from "react-router-dom";
 import "./Carousel.scss";
 //imgs
 import playIcon from "../../assets/play-icon.png";
@@ -31,11 +32,13 @@ const CarouselItem = (props) => {
       <img className="carousel-item__img" src={cover} alt={title} />
       <div className="carousel-item__details">
         <div>
-          <img
-            className="carousel-item__details--img"
-            alt="Play Icon"
-            src={playIcon}
-          />
+          <Link to={`/player/${id}`}>
+            <img
+              className="carousel-item__details--img"
+              alt="Play Icon"
+              src={playIcon}
+            />
+          </Link>
           {isList ? (
             <img
               className="carousel-item__details--img"
@@ -65,6 +68,8 @@ CarouselItem.propTypes = {
   year: PropTypes.number,
   contentRating: PropTypes.string,
   duration: PropTypes.number,
+  setFavorite: PropTypes.func,
+  removeFavorite: PropTypes.func,
 };
 
 const mapDispatchToProps = {

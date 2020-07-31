@@ -10,15 +10,19 @@
 }
 
 .main__title {
-  color: #E9EEF1;
+  color: #e9eef1;
   font-size: 25px;
+}
+
+.main .isHome {
+  width: 70%;
 }
 
 .input {
   background-color: #ffffff1a;
-  border: 2px solid #E9EEF1;
+  border: 2px solid #e9eef1;
   border-radius: 25px;
-  color: #E9EEF1;
+  color: #e9eef1;
   font-family: $theme-font;
   font-size: 16px;
   height: 50px;
@@ -28,5 +32,5 @@
 }
 
 ::placeholder {
-  color: #E9EEF1;
+  color: #e9eef1;
 }

@@ -3,21 +3,28 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import gravatar from "../../utils/gravatar";
 import { logoutRequest } from "../../actions";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 import "./Header.scss";
 //Import imgs
 import logo from "../../assets/logo-platzi-video-BW2.png";
 import userIcon from "../../assets/user-icon.png";
 
 const Header = (props) => {
-  const { user } = props;
+  const { user, isLogin, isRegister } = props;
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
     props.logoutRequest({});
   };
 
+  const headerClass = classNames("header", {
+    isLogin,
+    isRegister,
+  });
+
   return (
-    <header className="header">
+    <header className={headerClass}>
       <Link to="/">
         <img className="header__img" src={logo} alt="Platzi Video" />
       </Link>
@@ -57,6 +64,13 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
   };
+};
+
+Header.propTypes = {
+  user: PropTypes.object,
+  isLogin: PropTypes.object,
+  isRegister: PropTypes.object,
+  logoutRequest: PropTypes.func,
 };
 
 const mapDispatchToProps = {
